@@ -5,7 +5,7 @@ const quizData = [
         b: "1100",
         c: "2000",
         d: "1200",
-        correct: "a",
+        correct: "a",   
     },
     {
         question: "Yo’llari bor, yurib bo’lmaydi, yerlari bor – ekib bo’lmaydi, yam-yashil o’tloq bor – yulishni iloji yo’q, dengiz, daryo ko’llari bor, ammo suvi yo’q.?",
@@ -27,10 +27,66 @@ const quizData = [
         question: "Kichkina, kulranggina, filga o’xshaydi. ?",
         a: "Filning bolasi.",
         b: "Shaxmat donasi",
-        c:" tog`ri javob yo`q",
-        d:" fil rasmi ",
+        c: " tog`ri javob yo`q",
+        d: " fil rasmi ",
         correct: "a"
-    },
+    }, 
+    {
+
+        question: "Misr ehromlarining eng kattasi qaysi ?",
+        a: "Xufu",
+        b: "Sorkafak",
+        c: " Menkuara",
+        d: "Xafra",
+        correct: "a"
+    }, 
+    {
+
+        question: "Js da nechta Data type bor ?",
+        a: "7",
+        b: "6",
+        c: " 8",
+        d: "9",
+        correct: "c"
+    }, 
+    {
+
+        question: "O`zbek Alifbosida nechtaharf mavjud ?",
+        a: "30",
+        b: "28",
+        c: " 29",
+        d: "27",
+        correct: "c"
+    }
+    , 
+    {
+
+        question: "Har bir tejab qolingan pul ishlab topilgan pul bilan barobar bu jumlalar kimga tegishli?",
+        a: "Benjimin franklin ",
+        b: "Mag`rur Tarkvinniy",
+        c: "Tom Kruz",
+        d: "Yosir Arofat",
+        correct: "a"
+    }
+    , 
+    {
+
+        question: "Inson tanasida nechta suyak bo`lda ?",
+        a: "270 dan ortiq",
+        b: "206 dan ortiq",
+        c: "500 ta",
+        d: "250 ta",
+        correct: "b"
+    }, 
+    {
+
+        question: "O`zbekiston Respusublikasi bayrog`ining standart o`lchamini toping ?",
+        a: "Uzunligi : 250 sm, Kengligi 140sm",
+        b: "Uzunligi : 200 sm, Kengligi 140sm",
+        c: " Uzunligi : 250 sm, Kengligi 125sm",
+        d: "Uzunligi : 250 sm, Kengligi 135sm",
+        correct: "c"
+    }
 ];
 
 const quiz = document.getElementById('quiz')
@@ -67,7 +123,7 @@ function getSelected() {
     let answer
 
     answerEls.forEach(answerEl => {
-        if(answerEl.checked) {
+        if (answerEl.checked) {
             answer = answerEl.id
         }
     })
@@ -77,19 +133,19 @@ function getSelected() {
 
 submitBtn.addEventListener('click', () => {
     const answer = getSelected()
-    
-    if(answer) {
-        if(answer === quizData[currentQuiz].correct) {
+
+    if (answer) {
+        if (answer === quizData[currentQuiz].correct) {
             score++
         }
 
         currentQuiz++
 
-        if(currentQuiz < quizData.length) {
+        if (currentQuiz < quizData.length) {
             loadQuiz()
         } else {
             quiz.innerHTML = `
-                <h2>You answered ${score}/${quizData.length} questions correctly</h2>
+                <h2>You answered ${score} / ${quizData.length} questions correctly</h2>
 
                 <button onclick="location.reload()">Reload</button>
             `

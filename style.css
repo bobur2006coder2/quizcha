@@ -49,7 +49,7 @@ ul li label {
 }
 
 button {
-  background-color: #8e44ad;
+  background-color: rgb(66, 102, 13);
   color: #fff;
   border: none;
   display: block;
@@ -61,10 +61,7 @@ button {
 }
 
 button:hover {
-  background-color: #732d91;
+ background-color: green;
 }
 
-button:focus {
-  outline: none;
-  background-color: #5e3370;
-}
+
